@@ -15,20 +15,41 @@ char* strdup(const char* s){
     *ptr = '\0';
     return newPtr;
 }
-
-char* findx(const char* s, const char* x){
-
+//string xString = "never";
+//string sString = "twelve";
+char* findx(const char* s, const char* x) {
+    char *iter1 = new char;
+    char *iter = new char;
+    int count = 0;
+    while (*x != '\0') {
+        s = s-count+2;
+        while (*s != '\0') {
+            if (*x == *s) {
+                *iter = *s;
+                return iter;
+            }
+            count++;
+            ++s;
+        }
+        ++x;
+    }
+    iter = nullptr;
+    return iter;
 }
 
 int main() {
-    string temp = "this string";
+    string temp = "man dumb";
     const char* cstr = temp.c_str();
     strdup(cstr);
     cout << cstr << endl;
 
-    string xString = "this word is lame right?";
-    string sString = "i never said this word was lame";
-    cout << xString << sString << endl;
+    string xString = "insane";
+    string sString = "mmean";
+    const char* xStringToChar = xString.c_str();
+    const char* sStringToChar = sString.c_str();
+    temp = findx(sStringToChar, xStringToChar);
+    cout << "AHHHH " << temp << endl;
+
     return 0;
 }
 
