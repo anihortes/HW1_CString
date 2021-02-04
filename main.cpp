@@ -1,6 +1,8 @@
 #include <iostream>
+#include <string>
+using std::string;
 
-char* strup(const char* s){
+char* strdup(const char* s){
     char* ptr = new char;
     auto newPtr = ptr;
     while(*s != '\0'){
@@ -13,7 +15,10 @@ char* strup(const char* s){
 }
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    string temp = "this string";
+    const char* cstr = temp.c_str();
+    strdup(cstr);
+    std::cout << cstr << std::endl;
     return 0;
 }
 
