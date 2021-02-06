@@ -1,9 +1,11 @@
-#include <iostream>
-using std::cout;
-using std::endl;
-#include <string>
-using std::string;
+/*
+ * A. Harrison Owen
+ * CS 202: Homework 1
+ * Professor Hartman
+ * 02/05/2021
+ */
 
+//Takes a C-style string and dynamically allocates it to memory.
 char* strdup(const char* s){
     char* ptr = new char;
     auto newPtr = ptr;
@@ -16,8 +18,7 @@ char* strdup(const char* s){
     return newPtr;
 }
 
-//string xString = "never";
-//string sString = "twelve";
+//finds the first instance of x in s
 char* findx(const char* s, const char* x) {
     int count = 0;
     while (*x != '\0') {
@@ -36,21 +37,5 @@ char* findx(const char* s, const char* x) {
     }
     char *iter = nullptr;
     return iter;
-}
-
-int main() {
-    string temp = "string for first program";
-    const char* cstr = temp.c_str();
-    strdup(cstr);
-    cout << cstr << endl;
-
-    string xString = "nrsaver";
-    string sString = "twelve";
-    const char* xStringToChar = xString.c_str();
-    const char* sStringToChar = sString.c_str();
-    auto newString = findx(sStringToChar, xStringToChar);
-    cout << newString << endl;
-
-    return 0;
 }
 
